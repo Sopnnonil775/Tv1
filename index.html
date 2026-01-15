@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Premium Live TV - Crown Access</title>
+    <title>BD LiveTV - Premium Live Television</title>
     
     <link href="https://vjs.zencdn.net/7.20.3/video-js.min.css" rel="stylesheet" />
     
@@ -17,7 +17,7 @@
         body { 
             background-color: #0a0a0a; 
             color: #fff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', 'Noto Sans Bengali', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
             overflow-x: hidden; 
@@ -43,27 +43,28 @@
             background: rgba(30, 30, 30, 0.95); 
             padding: 40px; 
             border-radius: 20px;
-            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4); 
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.4); 
             text-align: center;
             width: 350px; 
-            border: 1px solid #333; 
+            border: 1px solid #444; 
             backdrop-filter: blur(10px);
             animation: slideUp 0.5s ease;
         }
         
         .login-box h2 { 
-            color: #e50914; 
+            color: #FFC107; 
             margin-bottom: 25px; 
             font-size: 28px; 
             letter-spacing: 2px; 
-            text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+            font-weight: 700;
         }
         
         .login-box input {
             width: 100%; 
             padding: 12px 15px; 
             margin: 10px 0; 
-            border: 1px solid #444;
+            border: 1px solid #555;
             border-radius: 8px; 
             background: #222; 
             color: white; 
@@ -73,15 +74,15 @@
         }
         
         .login-box input:focus { 
-            border-color: #e50914; 
-            box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
+            border-color: #FFC107; 
+            box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
         }
         
         .login-box button {
             width: 100%; 
             padding: 14px; 
-            background: linear-gradient(to right, #e50914, #b20710); 
-            color: white;
+            background: linear-gradient(to right, #FFC107, #FF9800); 
+            color: #000;
             border: none; 
             border-radius: 8px; 
             cursor: pointer; 
@@ -89,12 +90,13 @@
             margin-top: 20px; 
             transition: all 0.3s; 
             font-size: 16px;
+            font-weight: 700;
         }
         
         .login-box button:hover { 
-            background: linear-gradient(to right, #b20710, #8f060d); 
+            background: linear-gradient(to right, #FF9800, #F57C00); 
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
         }
         
         .login-box button:active { 
@@ -113,15 +115,15 @@
             animation: shake 0.3s ease;
         }
 
-        /* মেইন অ্যাপ কন্টেন্ট (শুরুতে লুকানো) */
+        /* মেইন অ্যাপ কন্টেন্ট */
         #main-app { 
             display: none; 
-            padding: 20px; 
+            padding: 15px; 
             animation: fadeIn 0.5s ease;
         }
         
         .container { 
-            max-width: 1000px; 
+            max-width: 1200px; 
             margin: auto; 
         }
         
@@ -130,26 +132,46 @@
             justify-content: space-between; 
             align-items: center; 
             margin-bottom: 20px; 
-            padding: 15px;
-            background: rgba(20, 20, 20, 0.9);
-            border-radius: 10px;
+            padding: 15px 20px;
+            background: rgba(25, 25, 25, 0.95);
+            border-radius: 12px;
             border: 1px solid #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .header-title { 
+            color: #FFC107; 
+            font-size: 26px; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            margin: 0; 
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+            font-weight: 700;
+        }
+        
+        .header-subtitle {
+            color: #aaa;
+            font-size: 14px;
+            margin-top: 5px;
         }
         
         .logout-btn { 
             background: #333; 
-            color: #fff; 
-            border: none; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
+            color: #FFC107; 
+            border: 1px solid #FFC107; 
+            padding: 10px 25px; 
+            border-radius: 8px; 
             cursor: pointer; 
             transition: all 0.3s;
             font-weight: bold;
+            font-size: 15px;
         }
         
         .logout-btn:hover { 
-            background: #e50914; 
+            background: #FFC107; 
+            color: #000;
             transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
         }
 
         .player-wrapper { 
@@ -158,8 +180,8 @@
             border-radius: 12px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
-            margin-bottom: 20px; 
-            border: 1px solid #333; 
+            margin-bottom: 25px; 
+            border: 2px solid #333; 
         }
         
         .video-js { 
@@ -167,67 +189,87 @@
             height: 500px !important; 
         }
         
+        .vjs-big-play-button {
+            background-color: rgba(255, 193, 7, 0.8) !important;
+            border-radius: 50% !important;
+            border: none !important;
+        }
+        
+        .vjs-big-play-button:hover {
+            background-color: rgba(255, 193, 7, 1) !important;
+        }
+
         /* চ্যানেল লিস্ট স্টাইল */
         .channel-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-            gap: 12px; 
-            max-height: 400px; 
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+            gap: 15px; 
+            max-height: 450px; 
             overflow-y: auto; 
-            padding: 15px; 
+            padding: 20px; 
             background: #151515; 
-            border-radius: 10px; 
+            border-radius: 12px; 
             border: 1px solid #333; 
         }
         
         .channel-item { 
             background: #222; 
-            border-radius: 8px; 
-            padding: 15px 10px; 
+            border-radius: 10px; 
+            padding: 18px 10px; 
             text-align: center; 
             cursor: pointer; 
             transition: all 0.3s; 
             border: 1px solid #444; 
-            font-size: 13px; 
-            font-weight: bold; 
-            color: #ccc; 
-            min-height: 70px;
+            font-size: 14px; 
+            font-weight: 600; 
+            color: #ddd; 
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
         
         .channel-item:hover { 
-            background: #e50914; 
-            color: #fff; 
-            transform: translateY(-3px); 
-            border-color: #e50914;
-            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+            background: #FFC107; 
+            color: #000; 
+            transform: translateY(-5px) scale(1.03); 
+            border-color: #FFC107;
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
         }
         
         .channel-item.active { 
-            background: #e50914; 
-            color: #fff; 
+            background: #FFC107; 
+            color: #000; 
             border-color: #fff;
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.7);
+            transform: scale(1.05);
         }
         
-        .header-title { 
-            text-align: center; 
-            color: #e50914; 
-            font-size: 24px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin: 0; 
-            text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+        .channel-logo {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #FFC107;
+        }
+        
+        .channel-item.active .channel-logo {
+            background: #000;
+            color: #FFC107;
         }
         
         ::-webkit-scrollbar { 
-            width: 8px; 
+            width: 10px; 
         }
         
         ::-webkit-scrollbar-thumb { 
-            background: #e50914; 
+            background: #FFC107; 
             border-radius: 10px; 
         }
         
@@ -245,7 +287,7 @@
         @keyframes slideUp {
             from { 
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to { 
                 opacity: 1;
@@ -259,33 +301,90 @@
             75% { transform: translateX(5px); }
         }
 
-        @media (max-width: 600px) {
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* রেসপনসিভ ডিজাইন */
+        @media (max-width: 768px) {
             .video-js { 
-                height: 250px !important; 
+                height: 300px !important; 
             }
             
             .channel-grid { 
-                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); 
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+                gap: 12px;
+                padding: 15px;
             }
             
             .login-box { 
                 width: 90%; 
                 padding: 30px 20px; 
+                margin: 15px;
+            }
+            
+            .header-title {
+                font-size: 20px;
+            }
+            
+            .header-nav {
+                padding: 12px 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logout-btn {
+                width: 100%;
+                padding: 12px;
+            }
+            
+            .channel-item {
+                padding: 15px 8px;
+                font-size: 13px;
+                min-height: 70px;
+            }
+            
+            .channel-logo {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .video-js { 
+                height: 250px !important; 
+            }
+            
+            .channel-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
             }
             
             .header-title {
                 font-size: 18px;
+                text-align: center;
             }
             
-            .logout-btn {
-                padding: 8px 15px;
-                font-size: 14px;
+            #main-app {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 0 5px;
             }
         }
         
-        @media (max-width: 400px) {
+        @media (max-width: 360px) {
             .channel-grid {
-                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            }
+            
+            .channel-item {
+                font-size: 12px;
+                padding: 12px 5px;
             }
         }
     </style>
@@ -294,10 +393,13 @@
 
 <div id="login-overlay">
     <div class="login-box">
-        <h2>CROWN TV</h2>
-        <input type="text" id="username" placeholder="Username" autocomplete="username">
-        <input type="password" id="password" placeholder="Password" autocomplete="current-password">
-        <button id="login-btn" onclick="checkLogin()">UNLOCK ACCESS</button>
+        <h2>BD LiveTV</h2>
+        <div style="margin-bottom: 20px; color: #aaa; font-size: 14px;">
+            প্রিমিয়াম টেলিভিশন স্ট্রিমিং সার্ভিস
+        </div>
+        <input type="text" id="username" placeholder="ইউজারনেম" autocomplete="username" autofocus>
+        <input type="password" id="password" placeholder="পাসওয়ার্ড" autocomplete="current-password">
+        <button id="login-btn" onclick="checkLogin()">এক্সেস আনলক করুন</button>
         <p id="error-msg">ভুল ইউজারনেম বা পাসওয়ার্ড!</p>
     </div>
 </div>
@@ -305,18 +407,24 @@
 <div id="main-app">
     <div class="container">
         <div class="header-nav">
-            <div class="header-title">Premium Live TV</div>
-            <button class="logout-btn" onclick="logout()">Logout</button>
+            <div>
+                <div class="header-title">BD LiveTV</div>
+                <div class="header-subtitle" id="user-welcome">লাইভ টেলিভিশন স্ট্রিমিং</div>
+            </div>
+            <button class="logout-btn" onclick="logout()">লগআউট</button>
         </div>
 
         <div class="player-wrapper">
             <video id="tv-player" class="video-js vjs-big-play-centered vjs-default-skin" controls preload="auto" poster="https://i.ibb.co/3pXnB9K/loading.jpg">
-                <p class="vjs-no-js">To view this video please enable JavaScript.</p>
+                <p class="vjs-no-js">এই ভিডিও দেখতে জাভাস্ক্রিপ্ট সক্ষম করুন।</p>
             </video>
         </div>
 
         <div class="channel-grid" id="playlist">
-            <p style="text-align:center; width:100%; color: #999; padding: 20px;">চ্যানেল লোড হচ্ছে...</p>
+            <div style="text-align:center; width:100%; color: #FFC107; padding: 20px;">
+                <div style="margin-bottom: 10px; font-size: 18px;">চ্যানেল লোড হচ্ছে...</div>
+                <div style="font-size: 14px; color: #aaa;">অনুগ্রহপূর্বক অপেক্ষা করুন</div>
+            </div>
         </div>
     </div>
 </div>
@@ -328,9 +436,10 @@
     
     // লগইন ক্রেডেনশিয়ালস
     const VALID_USERS = [
-        { username: "admin1", password: "admin1" },
-        { username: "user", password: "password" },
-        { username: "test", password: "test123" }
+        { username: "admin", password: "admin123" },
+        { username: "user", password: "user123" },
+        { username: "test", password: "test123" },
+        { username: "bd", password: "live123" }
     ];
 
     // লগইন চেক ফাংশন
@@ -338,6 +447,7 @@
         const user = document.getElementById('username').value.trim();
         const pass = document.getElementById('password').value.trim();
         const errorMsg = document.getElementById('error-msg');
+        const loginBtn = document.getElementById('login-btn');
 
         // Validation
         if (!user || !pass) {
@@ -346,26 +456,37 @@
             return;
         }
 
+        // Show loading on button
+        loginBtn.innerHTML = 'চেক করছে...';
+        loginBtn.disabled = true;
+
         // Check credentials
-        const isValidUser = VALID_USERS.some(u => u.username === user && u.password === pass);
-        
-        if (isValidUser) {
-            // Success
-            errorMsg.style.display = 'none';
-            sessionStorage.setItem('crownAuth', 'true');
-            sessionStorage.setItem('username', user);
-            showApp();
-        } else {
-            // Error
-            errorMsg.textContent = "ভুল ইউজারনেম বা পাসওয়ার্ড!";
-            errorMsg.style.display = 'block';
+        setTimeout(() => {
+            const isValidUser = VALID_USERS.some(u => u.username === user && u.password === pass);
             
-            // Shake animation
-            errorMsg.style.animation = 'none';
-            setTimeout(() => {
-                errorMsg.style.animation = 'shake 0.3s ease';
-            }, 10);
-        }
+            if (isValidUser) {
+                // Success
+                errorMsg.style.display = 'none';
+                sessionStorage.setItem('bdLiveAuth', 'true');
+                sessionStorage.setItem('username', user);
+                sessionStorage.setItem('loginTime', new Date().getTime());
+                showApp();
+            } else {
+                // Error
+                errorMsg.textContent = "ভুল ইউজারনেম বা পাসওয়ার্ড!";
+                errorMsg.style.display = 'block';
+                
+                // Shake animation
+                errorMsg.style.animation = 'none';
+                setTimeout(() => {
+                    errorMsg.style.animation = 'shake 0.3s ease';
+                }, 10);
+                
+                // Reset button
+                loginBtn.innerHTML = 'এক্সেস আনলক করুন';
+                loginBtn.disabled = false;
+            }
+        }, 500);
     }
 
     // অ্যাপ দেখানোর ফাংশন
@@ -381,10 +502,10 @@
             loginOverlay.style.display = 'none';
             mainApp.style.display = 'block';
             
-            // Update title with username
-            const title = document.querySelector('.header-title');
-            if (username && title) {
-                title.innerHTML = `Premium Live TV <small style="font-size: 14px; color: #ccc;">(${username})</small>`;
+            // Update user welcome message
+            const welcomeEl = document.getElementById('user-welcome');
+            if (username && welcomeEl) {
+                welcomeEl.innerHTML = `স্বাগতম, ${username} | লাইভ টেলিভিশন`;
             }
             
             // Initialize player
@@ -395,8 +516,19 @@
                     preload: 'auto',
                     fluid: true,
                     responsive: true,
-                    playbackRates: [0.5, 1, 1.5, 2]
+                    playbackRates: [0.5, 1, 1.5, 2],
+                    controlBar: {
+                        volumePanel: {
+                            inline: false
+                        }
+                    }
                 });
+                
+                // Add error handling
+                player.on('error', function() {
+                    console.log('Player error occurred');
+                });
+                
                 loadPlaylist();
             }
         }, 300);
@@ -404,15 +536,25 @@
 
     async function loadPlaylist() {
         try {
+            const playlistElement = document.getElementById('playlist');
+            playlistElement.innerHTML = `
+                <div style="text-align:center; width:100%; color: #FFC107; padding: 30px;">
+                    <div style="margin-bottom: 15px; font-size: 18px;">চ্যানেল লিস্ট লোড হচ্ছে...</div>
+                    <div style="font-size: 14px; color: #aaa;">এটি কিছু সময় নিতে পারে</div>
+                </div>
+            `;
+
             const response = await fetch(m3uUrl);
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) throw new Error('নেটওয়ার্ক রেসপন্স ঠিক নেই');
             
             const data = await response.text();
             const lines = data.split('\n');
-            const playlistElement = document.getElementById('playlist');
+            
             playlistElement.innerHTML = '';
 
             let channels = [];
+            let channelCount = 0;
+            
             for (let i = 0; i < lines.length; i++) {
                 if (lines[i].startsWith('#EXTINF:')) {
                     let name = lines[i].split(',')[1];
@@ -420,26 +562,56 @@
                     
                     // Clean up channel name
                     if (name) {
-                        name = name.replace(/\|.*$/g, '').trim(); // Remove | and everything after
-                        name = name.replace(/\[.*?\]/g, '').trim(); // Remove [text]
+                        name = name.replace(/\|.*$/g, '').trim();
+                        name = name.replace(/\[.*?\]/g, '').trim();
+                        name = name.replace(/\(.*?\)/g, '').trim();
+                        name = name.replace(/\s+/g, ' ').trim();
+                        
+                        // Make sure name is not empty
+                        if (!name || name.length < 2) {
+                            name = `চ্যানেল ${channelCount + 1}`;
+                        }
+                    } else {
+                        name = `চ্যানেল ${channelCount + 1}`;
                     }
                     
                     if (url && url.startsWith('http')) {
-                        channels.push({ name: name || `Channel ${channels.length + 1}`, url });
+                        channels.push({ 
+                            name: name, 
+                            url: url,
+                            id: channelCount + 1
+                        });
+                        channelCount++;
                     }
                 }
             }
 
             if (channels.length === 0) {
-                playlistElement.innerHTML = '<p style="color:#e50914; text-align:center; padding: 20px;">কোন চ্যানেল পাওয়া যায়নি!</p>';
+                playlistElement.innerHTML = `
+                    <div style="color:#FFC107; text-align:center; padding: 30px; width: 100%;">
+                        <div style="font-size: 18px; margin-bottom: 10px;">কোন চ্যানেল পাওয়া যায়নি!</div>
+                        <div style="color: #aaa; font-size: 14px;">প্লেলিস্ট ফাইল চেক করুন</div>
+                    </div>
+                `;
                 return;
             }
+
+            // Sort channels by name
+            channels.sort((a, b) => a.name.localeCompare(b.name));
 
             channels.forEach((channel, index) => {
                 const btn = document.createElement('div');
                 btn.className = 'channel-item';
+                btn.dataset.channelId = channel.id;
                 btn.title = channel.name;
-                btn.innerHTML = `<span>${channel.name}</span>`;
+                
+                // Create channel logo with first letter or number
+                const logoText = channel.name.charAt(0).toUpperCase() || channel.id;
+                
+                btn.innerHTML = `
+                    <div class="channel-logo">${logoText}</div>
+                    <span>${channel.name}</span>
+                `;
                 
                 btn.onclick = () => {
                     // Remove active class from all
@@ -450,7 +622,8 @@
                     // Add active to clicked
                     btn.classList.add('active');
                     
-                    // Change video source
+                    // Show loading in player
+                    player.poster('https://i.ibb.co/3pXnB9K/loading.jpg');
                     player.src({ 
                         src: channel.url, 
                         type: 'application/x-mpegURL' 
@@ -458,7 +631,12 @@
                     
                     player.play().catch(e => {
                         console.log('Auto-play prevented:', e);
+                        // Show big play button
+                        player.bigPlayButton.show();
                     });
+                    
+                    // Update page title
+                    document.title = `${channel.name} - BD LiveTV`;
                     
                     // Scroll to top smoothly
                     window.scrollTo({top: 0, behavior: 'smooth'});
@@ -468,28 +646,47 @@
 
                 // Auto-select first channel
                 if (index === 0) {
-                    btn.click();
+                    setTimeout(() => {
+                        btn.click();
+                    }, 500);
                 }
             });
 
+            // Add channel count info
+            const countInfo = document.createElement('div');
+            countInfo.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 15px; color: #FFC107; font-size: 14px; border-top: 1px solid #333; margin-top: 10px;';
+            countInfo.textContent = `মোট চ্যানেল: ${channels.length} টি`;
+            playlistElement.appendChild(countInfo);
+
         } catch (error) {
             console.error('Error fetching M3U:', error);
-            document.getElementById('playlist').innerHTML = 
-                '<p style="color:#e50914; text-align:center; padding: 20px;">প্লেলিস্ট লোড করতে ব্যর্থ। ইন্টারনেট সংযোগ চেক করুন!</p>';
+            playlistElement.innerHTML = `
+                <div style="color:#FFC107; text-align:center; padding: 30px; width: 100%; grid-column: 1 / -1;">
+                    <div style="font-size: 18px; margin-bottom: 10px;">প্লেলিস্ট লোড করতে ব্যর্থ!</div>
+                    <div style="color: #aaa; font-size: 14px; margin-bottom: 15px;">ইন্টারনেট সংযোগ চেক করুন</div>
+                    <button onclick="location.reload()" style="background: #FFC107; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                        আবার চেষ্টা করুন
+                    </button>
+                </div>
+            `;
         }
     }
 
     function logout() {
-        sessionStorage.removeItem('crownAuth');
-        sessionStorage.removeItem('username');
-        
-        // Destroy video player
-        if (player) {
-            player.dispose();
-            player = null;
+        // Confirm logout
+        if (confirm('আপনি কি লগআউট করতে চান?')) {
+            sessionStorage.removeItem('bdLiveAuth');
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('loginTime');
+            
+            // Destroy video player
+            if (player) {
+                player.dispose();
+                player = null;
+            }
+            
+            location.reload();
         }
-        
-        location.reload();
     }
 
     // Enter key support for login
@@ -519,19 +716,37 @@
         }
 
         // Check if already logged in
-        if (sessionStorage.getItem('crownAuth') === 'true') {
-            showApp();
+        if (sessionStorage.getItem('bdLiveAuth') === 'true') {
+            // Check if session is still valid (24 hours)
+            const loginTime = sessionStorage.getItem('loginTime');
+            const currentTime = new Date().getTime();
+            const hours24 = 24 * 60 * 60 * 1000;
+            
+            if (loginTime && (currentTime - loginTime < hours24)) {
+                showApp();
+            } else {
+                // Session expired
+                sessionStorage.clear();
+            }
         }
     });
 
     // Prevent back button after logout
     window.onpageshow = function(event) {
         if (event.persisted) {
-            if (!sessionStorage.getItem('crownAuth')) {
+            if (!sessionStorage.getItem('bdLiveAuth')) {
                 location.reload();
             }
         }
     };
+
+    // Handle page visibility change
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden && player && player.paused()) {
+            // Try to play if page becomes visible
+            player.play().catch(e => console.log('Auto-play prevented on visibility change'));
+        }
+    });
 </script>
 
 </body>
